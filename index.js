@@ -35,16 +35,15 @@ const server = http.createServer((req, res) => {
     if (err) {
       console.error(err);
       res.statusCode = 500;
-      res.end();
+      res.end('<strong>500 - Internal Server Error</strong>');
     } else {
       res.end(data);
     }
   });
 });
 
-// Start the server on port 8080.
-// Specifying 'localhost' restricts access strictly to this machine (for security/dev isolation).
-// The callback is optional and serves purely to log confirmation for the developer.
+// Specifying 'localhost' restricts access strictly to this machine (for security/dev isolation). The callback is optional and serves purely to log confirmation for the developer.
+// Shortest possible code is: server.listen(8080)
 server.listen(8080, 'localhost', () => {
   console.log('Listening for requests on port 8080');
 });
