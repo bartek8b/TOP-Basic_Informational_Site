@@ -34,9 +34,17 @@ const server = http.createServer((req, res) => {
   fs.readFile(path, (err, data) => {
     if (err) {
       console.error(err);
+      res.statusCode = 500;
       res.end();
     } else {
       res.end(data);
     }
   });
+});
+
+// Start the server on port 8080.
+// Specifying 'localhost' restricts access strictly to this machine (for security/dev isolation).
+// The callback is optional and serves purely to log confirmation for the developer.
+server.listen(8080, 'localhost', () => {
+  console.log('Listening for requests on port 8080');
 });
