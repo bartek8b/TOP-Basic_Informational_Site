@@ -59,8 +59,9 @@ const server = http.createServer((req, res) => {
   });
 });
 
-// Specifying 'localhost' restricts access strictly to this machine (for security/dev isolation). The callback is optional and serves purely to log confirmation for the developer.
-// Shortest possible code is: server.listen(8080)
-server.listen(8080, 'localhost', () => {
-  console.log('Listening for requests on port 8080');
+// Dynamic PORT - allow external connections
+const PORT = process.env.PORT || 8080;
+
+server.listen(PORT, () => {
+  console.log(`Listening for requests on port ${PORT}`);
 });
