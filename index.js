@@ -2,6 +2,23 @@ import http from 'node:http';
 import fs from 'node:fs';
 
 const server = http.createServer((req, res) => {
+  // Static .css file service
+  if (req.url === '/style.css') {
+    res.setHeader('Content-Type', 'text/css');
+
+    fs.readFile('./public/style.css', (err, data) => {
+      if (err) {
+        res.statusCode = 404;
+        res.end('CSS file not found');
+      } else {
+        res.statusCode = 200;
+        res.end(data);
+      }
+    });
+    return;
+  }
+
+  // HTML servce
   res.setHeader('Content-Type', 'text/html');
 
   let path = './views/';
