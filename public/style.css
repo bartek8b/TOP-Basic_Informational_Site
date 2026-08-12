@@ -3,3 +3,8 @@ body{
     color: hsl(0, 0%, 90%);
     font-family: sans-serif;
 }
+nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+}
