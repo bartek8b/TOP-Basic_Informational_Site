@@ -27,7 +27,7 @@ app.get('/contact-me', (req, res) => {
 
 // Redirects
 app.get('/contact', (req, res) => {
-  res.redirects('/contact-me');
+  res.redirect('/contact-me');
 });
 
 // 404 page
