@@ -12,18 +12,19 @@ app.listen(PORT, () => {
 // Static .css file service
 app.use(express.static('public'));
 
+// Routes handling
 app.get('/', (req, res) => {
-  res.send('/views/index.html');
+  res.sendFile('/views/index.html', { root: __dirname });
 });
 
 app.get('/about', (req, res) => {
-  res.send('/views/about.html');
+  res.sendFile('/views/about.html', { root: __dirname });
 });
 
 app.get('/contact-me', (req, res) => {
-  res.send('/views/contact-me.html');
+  res.sendFile('/views/contact-me.html', { root: __dirname });
 });
 
 app.get('/', (req, res) => {
-  res.send('/views/index.html');
+  res.sendFile('/views/index.html', { root: __dirname });
 });
