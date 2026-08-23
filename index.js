@@ -25,9 +25,9 @@ app.get('/contact-me', (req, res) => {
   res.sendFile(path.join(viewsPath, 'contact-me.html'));
 });
 
-// Redirects
+// Redirects & set status 301 - path move permanently (default 302 - moved temporarily)
 app.get('/contact', (req, res) => {
-  res.redirect('/contact-me');
+  res.redirect(301, '/contact-me');
 });
 
 // 404 page
