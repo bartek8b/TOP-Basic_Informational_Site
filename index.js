@@ -12,17 +12,17 @@ app.use(express.static('public'));
 // Path to views folder
 const viewsPath = path.resolve('views');
 
-// Listen for requests
+// Paths handling
 app.get('/', (req, res) => {
-  res.sendFile('./views/index.html', { root: __dirname });
+  res.sendFile(path.join(viewsPath, 'index.html'));
 });
 
 app.get('/about', (req, res) => {
-  res.sendFile('./views/about.html', { root: __dirname });
+  res.sendFile(path.join(viewsPath, 'about.html'));
 });
 
 app.get('/contact-me', (req, res) => {
-  res.sendFile('./views/contact-me.html', { root: __dirname });
+  res.sendFile(path.join(viewsPath, 'contact-me.html'));
 });
 
 // Redirects
