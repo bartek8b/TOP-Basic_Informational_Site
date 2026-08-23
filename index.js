@@ -32,7 +32,7 @@ app.get('/contact', (req, res) => {
 
 // 404 page
 app.use((req, res) => {
-  res.sendFile('./views/404.html', { root: __dirname });
+  res.status(404).sendFile(path.join(viewsPath, '404.html'));
 });
 
 // Listening for requests
