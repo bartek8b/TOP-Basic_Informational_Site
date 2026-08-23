@@ -1,16 +1,16 @@
 import express from 'express';
+import path from 'path';
 
 const app = express();
 
 // Dynamic PORT - allow external connections
 const PORT = process.env.PORT || 3000;
 
-app.listen(PORT, () => {
-  console.log(`Listening for requests on port ${PORT}`);
-});
-
 // Static .css file service
 app.use(express.static('public'));
+
+// Path to views folder
+const viewsPath = path.resolve('views');
 
 // Listen for requests
 app.get('/', (req, res) => {
@@ -33,4 +33,9 @@ app.get('/contact', (req, res) => {
 // 404 page
 app.use((req, res) => {
   res.sendFile('./views/404.html', { root: __dirname });
+});
+
+// Listening for requests
+app.listen(PORT, () => {
+  console.log(`Listening for requests on port ${PORT}`);
 });
