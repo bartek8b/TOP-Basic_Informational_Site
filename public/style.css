@@ -1,10 +1,14 @@
-body{
-    background-color: hsl(0, 0%, 10%);
-    color: hsl(0, 0%, 90%);
-    font-family: sans-serif;
+body {
+  background-color: hsl(0, 0%, 10%);
+  color: hsl(0, 0%, 90%);
+  font-family: sans-serif;
 }
 nav {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 16px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+a {
+  color: hsl(80, 61%, 50%);
 }
